@@ -86,7 +86,8 @@ def csfrpoc():
         fields = ast.literal_eval(fields)
 
         for campo in fields:
-            input_tag = contenido.new_tag("input", type=campo['type'])
+            
+            input_tag = contenido.new_tag("input",type=campo['type'], value=campo['value'])
             input_tag['name'] = campo['name']
             form_tag.append(input_tag)
 
@@ -96,7 +97,6 @@ def csfrpoc():
         print(colored("                 HTML                      ","white","on_yellow"))
         print(colored("-------------------------------------------","white","on_yellow"))
         print(contenido.prettify())
-
         if output is not None:
             texto = open(output,"w")
             texto.write(str(contenido.prettify()))
@@ -119,7 +119,8 @@ def csfrpoc():
         fields = ast.literal_eval(fields)
 
         for campo in fields:
-            input_tag = contenido.new_tag("input", type=campo['type'])
+            
+            input_tag = contenido.new_tag("input",type=campo['type'], value=campo['value'])
             input_tag['name'] = campo['name']
             form_tag.append(input_tag)
 
@@ -129,7 +130,7 @@ def csfrpoc():
         print(colored("                 HTML                      ","white","on_yellow"))
         print(colored("-------------------------------------------","white","on_yellow"))
         print(contenido.prettify())
-
+        print(campo['value'])
         if output is not None:
             texto = open(output,"w")
             texto.write(str(contenido.prettify()))
